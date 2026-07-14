@@ -3,148 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Journey OS | نظام رحلة الثانوية العامة</title>
+  <title>Journey OS — مركز القيادة</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/styles.css" />
 </head>
-<body>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="orb orb-teal" aria-hidden="true"></div>
-  <div class="orb orb-indigo" aria-hidden="true"></div>
-
-  <main class="os-frame">
-    <aside class="rail" aria-label="التنقل الرئيسي">
-      <div class="identity">
-        <div class="mark"><span></span></div>
-        <div>
-          <strong>Journey OS</strong>
-          <small>Thanaweya Command Center</small>
-        </div>
-      </div>
-
-      <nav class="nav-list">
-        <button class="nav-item active" data-view="overview"><span>01</span>القيادة</button>
-        <button class="nav-item" data-view="timeline"><span>02</span>رحلة 52 أسبوع</button>
-        <button class="nav-item" data-view="planner"><span>03</span>التخطيط</button>
-        <button class="nav-item" data-view="missions"><span>04</span>المهام</button>
-        <button class="nav-item" data-view="focus"><span>05</span>التركيز</button>
-        <button class="nav-item" data-view="insights"><span>06</span>التحليل</button>
-        <button class="nav-item" data-view="wellbeing"><span>07</span>الطاقة</button>
-      </nav>
-
-      <section class="coach-card">
-        <p>AI Coach</p>
-        <h2>مهمتك الآن</h2>
-        <strong>ابدأ بأصعب درس قبل أي مشتت.</strong>
-        <small>قاعدة اليوم: 90 دقيقة Deep Work ثم مكافأة قصيرة.</small>
-      </section>
+<body data-page="overview">
+  <div class="backdrop"></div>
+  <main class="app-frame">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><strong>Journey OS</strong><small>ثالثة ثانوي · 52 أسبوع</small></a>
+      <nav class="nav"><a data-nav="overview" href="index.html">القيادة</a><a data-nav="timeline" href="pages/timeline.html">رحلة 52 أسبوع</a><a data-nav="planner" href="pages/planner.html">التخطيط</a><a data-nav="missions" href="pages/missions.html">المهام</a><a data-nav="focus" href="pages/focus.html">التركيز</a><a data-nav="insights" href="pages/insights.html">التحليل</a><a data-nav="wellbeing" href="pages/wellbeing.html">الطاقة</a></nav>
+      <section class="coach"><p>AI Mentor</p><strong>ابدأ من المهمة الأصعب، وليس الأسهل.</strong><span>90 دقيقة تركيز = تقدم حقيقي.</span></section>
     </aside>
-
-    <section class="workspace">
-      <header class="topbar">
-        <div>
-          <p class="kicker">العام الدراسي الكامل · 52 أسبوع</p>
-          <h1 id="viewTitle">مركز قيادة الطالب</h1>
-        </div>
-        <div class="student-pill">
-          <span class="pulse"></span>
-          <div><strong>أحمد</strong><small>Level <b id="level">11</b></small></div>
-        </div>
-      </header>
-
-      <section class="view active" id="overview" data-title="مركز قيادة الطالب">
-        <div class="hero-grid">
-          <article class="hero-card surface">
-            <div class="hero-copy">
-              <p class="kicker">نظام مصمم كمنتج عالمي</p>
-              <h2>كل أسبوع مرحلة. كل مهمة XP. كل مراجعة تقربك من القمة.</h2>
-              <p>واجهة داكنة مريحة للعين، أقسام منفصلة، مؤشرات ذكية، وتفاعل سريع يحول الثانوية العامة من ضغط عشوائي إلى لعبة تقدم واضحة.</p>
-            </div>
-            <div class="progress-orbit">
-              <div class="orbit-ring"><span id="progressPercent">23%</span></div>
-              <small>التقدم الإجمالي</small>
-            </div>
-          </article>
-          <article class="rank-card surface">
-            <p>Current Rank</p>
-            <h2>Diamond Scholar</h2>
-            <div class="xp-track"><span id="xpFill"></span></div>
-            <small><b id="xp">1840</b> / 5000 XP للترقية</small>
-          </article>
-        </div>
-
-        <div class="metric-grid">
-          <article class="metric surface"><span>🔥</span><strong id="streak">18</strong><small>يوم التزام</small></article>
-          <article class="metric surface"><span>📚</span><strong>42h</strong><small>مذاكرة أسبوعية</small></article>
-          <article class="metric surface"><span>🎯</span><strong>91%</strong><small>تنفيذ الخطة</small></article>
-          <article class="metric surface"><span>🧠</span><strong>7.8</strong><small>جودة التركيز</small></article>
-        </div>
-
-        <div class="command-grid">
-          <article class="surface next-action">
-            <p class="kicker">Next Best Action</p>
-            <h3>حل نموذج فيزياء مصغر — 35 سؤال</h3>
-            <p>الزمن المقترح 50 دقيقة. الهدف: تثبيت قوانين الحركة قبل الانتقال للكهرباء.</p>
-            <button class="primary" id="completeMission">إنهاء المهمة +180 XP</button>
-          </article>
-          <article class="surface subject-radar">
-            <p class="kicker">Subject Radar</p>
-            <div class="radar-row"><span>رياضيات</span><b style="--w:78%"></b><em>78%</em></div>
-            <div class="radar-row"><span>فيزياء</span><b style="--w:64%"></b><em>64%</em></div>
-            <div class="radar-row"><span>كيمياء</span><b style="--w:71%"></b><em>71%</em></div>
-            <div class="radar-row"><span>عربي</span><b style="--w:86%"></b><em>86%</em></div>
-          </article>
-        </div>
+    <section class="page-shell">
+      <header class="page-header"><p>Command Center</p><h1>نظام قيادة مصمم للطالب الذي يريد السيطرة على السنة.</h1><div class="profile"><span></span><b>Level 11</b></div></header>
+      <section class="hero-board panel">
+        <div><p class="eyebrow">Premium Study OS</p><h2>الثانوية العامة كلعبة استراتيجية: مراحل، XP، مؤشرات، وتخطيط أسبوعي واضح.</h2><p>واجهة داكنة هادئة، أقسام حقيقية منفصلة، وتفاعل سريع لتعرف ماذا تفعل اليوم وماذا سيحدث خلال 52 أسبوعًا.</p><button class="primary" id="quickWin">إنهاء Quick Win +180 XP</button></div>
+        <div class="progress-card"><div class="progress-ring"><span id="progressPercent">23%</span></div><small>إجمالي الرحلة</small></div>
       </section>
-
-      <section class="view" id="timeline" data-title="رحلة 52 أسبوع">
-        <article class="surface page-head">
-          <p class="kicker">Game World Map</p>
-          <h2>الخريطة مقسمة إلى 4 عوالم: تأسيس، صعود، مراجعة، محاكاة امتحان.</h2>
-        </article>
-        <div class="world-tabs">
-          <button class="world active">Foundation</button><button class="world">Momentum</button><button class="world">Mastery</button><button class="world">Final Boss</button>
-        </div>
-        <div class="weeks-track" id="weeksTrack"></div>
-      </section>
-
-      <section class="view" id="planner" data-title="التخطيط الأسبوعي">
-        <div class="planner-board">
-          <article class="surface plan-column"><h2>الأسبوع الحالي</h2><div id="weekPlan"></div></article>
-          <article class="surface plan-column"><h2>قواعد التخطيط</h2><ul><li>3 مهام عميقة فقط يوميًا.</li><li>اختبار قصير بعد كل وحدة.</li><li>مراجعة متباعدة بعد 1/3/7 أيام.</li><li>يوم خفيف لاستعادة الطاقة.</li></ul></article>
-        </div>
-      </section>
-
-      <section class="view" id="missions" data-title="المهام والتحديات">
-        <div class="mission-grid" id="missionGrid"></div>
-      </section>
-
-      <section class="view" id="focus" data-title="غرفة التركيز">
-        <article class="surface focus-room">
-          <p class="kicker">Deep Work Arena</p>
-          <h2>Pomodoro Boss Fight</h2>
-          <div class="timer" id="timer">25:00</div>
-          <button class="primary" id="startFocus">ابدأ جلسة تركيز</button>
-          <p>أغلق الهاتف. افتح مصدرًا واحدًا فقط. لا تنتقل للمهمة التالية قبل انتهاء الجولة.</p>
-        </article>
-      </section>
-
-      <section class="view" id="insights" data-title="التحليل الذكي">
-        <div class="insight-grid">
-          <article class="surface insight-card"><h2>نقطة الخطر</h2><p>الفيزياء أقل من باقي المواد بـ 14%. اقترح النظام جلستين قوانين + بنك أسئلة.</p></article>
-          <article class="surface insight-card"><h2>أفضل وقت مذاكرة</h2><p>أعلى تركيز يظهر بين 7:30 و10:00 مساءً. ثبّت أصعب مادة في هذا الوقت.</p></article>
-          <article class="surface insight-card"><h2>توقع نهاية الأسبوع</h2><p>إذا استمر المعدل الحالي ستنهي 93% من خطة الأسبوع.</p></article>
-        </div>
-      </section>
-
-      <section class="view" id="wellbeing" data-title="الطاقة والرفاهية">
-        <div class="wellbeing-grid">
-          <article class="surface energy-card"><h2>Battery</h2><div class="battery"><span style="height:82%"></span></div><p>طاقة ممتازة — حافظ على النوم والمياه.</p></article>
-          <article class="surface habits"><h2>Habits</h2><label><input type="checkbox" checked> نوم 7 ساعات</label><label><input type="checkbox"> مشي 15 دقيقة</label><label><input type="checkbox" checked> وجبة بروتين</label></article>
-        </div>
-      </section>
+      <section class="metrics"><article class="panel metric"><span>XP</span><strong id="xp">1840</strong><small>من 5000 للترقية</small></article><article class="panel metric"><span>Streak</span><strong id="streak">18</strong><small>يوم التزام</small></article><article class="panel metric"><span>Focus</span><strong>7.8</strong><small>جودة التركيز</small></article><article class="panel metric"><span>Plan</span><strong>91%</strong><small>تنفيذ الأسبوع</small></article></section>
+      <section class="two-col"><article class="panel"><p class="eyebrow">Next Best Action</p><h3>حل نموذج فيزياء مصغر — 35 سؤال</h3><p>الهدف: تثبيت قوانين الحركة قبل الانتقال للكهرباء. لا تبدأ بمهمة سهلة لتخدع نفسك بالتقدم.</p></article><article class="panel subject-panel"><p class="eyebrow">Subject Radar</p><div class="bar"><span>رياضيات</span><b style="--w:78%"></b><em>78%</em></div><div class="bar"><span>فيزياء</span><b style="--w:64%"></b><em>64%</em></div><div class="bar"><span>كيمياء</span><b style="--w:71%"></b><em>71%</em></div><div class="bar"><span>عربي</span><b style="--w:86%"></b><em>86%</em></div></article></section>
     </section>
   </main>
   <script src="src/app.js"></script>
