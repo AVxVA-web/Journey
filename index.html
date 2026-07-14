@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>رحلة الثانوية العامة | 52 أسبوع</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div class="aurora aurora-one"></div>
+  <div class="aurora aurora-two"></div>
+  <main class="app-shell">
+    <aside class="sidebar glass-panel">
+      <div class="brand">
+        <div class="logo">J</div>
+        <div><span>Journey</span><small>ثالثة ثانوي</small></div>
+      </div>
+      <nav aria-label="أقسام التطبيق">
+        <a class="active" href="#dashboard">لوحة القيادة</a>
+        <a href="#weeks">خريطة 52 أسبوع</a>
+        <a href="#planner">التخطيط الأسبوعي</a>
+        <a href="#missions">المهام والتحديات</a>
+        <a href="#focus">غرفة التركيز</a>
+        <a href="#wellbeing">الطاقة والرفاهية</a>
+      </nav>
+      <div class="mentor-card">
+        <span>مساعد الرحلة</span>
+        <p>راجع هدفك كل صباح، واهزم اليوم بمهمة صغيرة واحدة.</p>
+      </div>
+    </aside>
+
+    <section class="content">
+      <header class="hero glass-panel" id="dashboard">
+        <div class="hero-copy">
+          <p class="eyebrow">الموسم الدراسي · 52 أسبوع</p>
+          <h1>حوّل الثانوية العامة إلى لعبة إنجاز يومية.</h1>
+          <p>تتبّع الأسابيع، خطط بذكاء، اجمع نقاط XP، حافظ على طاقتك، واكتشف مسارك حتى الامتحانات بتجربة زجاجية ناعمة مستوحاة من Apple.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="completeMission">أنهِ مهمة اليوم +120 XP</button>
+            <button class="ghost-btn" id="resetProgress">إعادة ضبط العرض</button>
+          </div>
+        </div>
+        <div class="level-card">
+          <div class="ring" aria-label="نسبة التقدم"><span id="progressPercent">19%</span></div>
+          <h2>المستوى <span id="level">8</span></h2>
+          <p>المتبقي للامتحانات: <strong id="weeksLeft">42 أسبوع</strong></p>
+          <div class="xp-bar"><span id="xpFill"></span></div>
+          <small><span id="xp">2460</span> / 3000 XP للترقية</small>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <article class="stat glass-panel"><span>🔥</span><strong id="streak">12</strong><small>أيام التزام متتالية</small></article>
+        <article class="stat glass-panel"><span>🎯</span><strong>86%</strong><small>دقة تنفيذ الخطة</small></article>
+        <article class="stat glass-panel"><span>⏱️</span><strong>34h</strong><small>مذاكرة هذا الأسبوع</small></article>
+        <article class="stat glass-panel"><span>🏆</span><strong>17</strong><small>شارات مكتسبة</small></article>
+      </section>
+
+      <section class="split-layout">
+        <article class="glass-panel journey-map" id="weeks">
+          <div class="section-title"><p>خريطة الرحلة</p><h2>52 أسبوع على شكل مراحل لعبة</h2></div>
+          <div class="weeks-track" id="weeksTrack"></div>
+        </article>
+        <article class="glass-panel planner" id="planner">
+          <div class="section-title"><p>التخطيط الأسبوعي</p><h2>سبرنت الأسبوع 10</h2></div>
+          <div class="schedule">
+            <div><b>السبت</b><span>رياضيات · مراجعة تفاضل</span></div>
+            <div><b>الأحد</b><span>فيزياء · قوانين الحركة</span></div>
+            <div><b>الإثنين</b><span>عربي · بلاغة وتدريبات</span></div>
+            <div><b>الثلاثاء</b><span>كيمياء · اتزان كيميائي</span></div>
+            <div><b>الأربعاء</b><span>إنجليزي · Writing Sprint</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="cards-row">
+        <article class="glass-panel missions" id="missions">
+          <div class="section-title"><p>المهام</p><h2>تحديات اليوم</h2></div>
+          <label><input type="checkbox" checked> حل 35 سؤال فيزياء <span>+90 XP</span></label>
+          <label><input type="checkbox"> مراجعة 20 كلمة إنجليزي <span>+45 XP</span></label>
+          <label><input type="checkbox"> امتحان قصير 25 دقيقة <span>+120 XP</span></label>
+        </article>
+        <article class="glass-panel focus" id="focus">
+          <div class="section-title"><p>غرفة التركيز</p><h2>Pomodoro Boss Fight</h2></div>
+          <div class="timer" id="timer">25:00</div>
+          <button class="primary-btn small" id="startFocus">ابدأ جولة تركيز</button>
+        </article>
+        <article class="glass-panel wellbeing" id="wellbeing">
+          <div class="section-title"><p>الرفاهية</p><h2>مؤشر الطاقة</h2></div>
+          <div class="energy"><span style="height:72%"></span><span style="height:48%"></span><span style="height:84%"></span><span style="height:63%"></span><span style="height:91%"></span></div>
+          <p>نصيحة: 7 ساعات نوم + مشي 15 دقيقة يحافظان على ثبات الأداء.</p>
+        </article>
+      </section>
+    </section>
+  </main>
+  <script src="src/app.js"></script>
+</body>
+</html>
