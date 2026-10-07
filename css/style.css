@@ -2964,12 +2964,12 @@ body.rodo-journal-modal-open { overflow:hidden; }
 .rodo-journal-month-label { display:flex; align-items:center; gap:.65rem; margin:0 0 .8rem; color:rgba(245,245,247,.72); font-size:.77rem; font-weight:750; }
 .rodo-journal-month-label::after { content:""; height:1px; flex:1; background:linear-gradient(90deg, rgba(255,255,255,.08), transparent); }
 .rodo-journal-timeline { position:relative; }
-.rodo-journal-timeline::before { content:""; position:absolute; top:0; bottom:0; right:76px; width:1px; background:linear-gradient(180deg, rgba(210,163,106,.22), rgba(255,255,255,.04)); pointer-events:none; }
+.rodo-journal-timeline::before { content:""; position:absolute; top:0; bottom:0; right:10px; width:1px; background:linear-gradient(180deg, rgba(210,163,106,.22), rgba(255,255,255,.04)); pointer-events:none; }
 .rodo-journal-day { position:relative; display:grid; grid-template-columns:96px minmax(0,1fr); gap:.8rem; align-items:start; }
 .rodo-journal-day + .rodo-journal-day { margin-top:1.1rem; }
 .rodo-journal-day-rail { position:relative; min-height:44px; padding-top:.15rem; display:flex; flex-direction:column; align-items:flex-end; gap:.15rem; }
-.rodo-journal-day-dot { position:absolute; top:.45rem; right:71px; width:10px; height:10px; border-radius:50%; background:var(--journal-warm); box-shadow:0 0 0 4px #101012, 0 0 0 5px rgba(210,163,106,.15); }
-.rodo-journal-day-label { padding-right:18px; display:flex; flex-direction:column; align-items:flex-end; gap:.1rem; text-align:right; }
+.rodo-journal-day-dot { position:absolute; top:.45rem; right:5px; width:10px; height:10px; border-radius:50%; background:var(--journal-warm); box-shadow:0 0 0 4px #101012, 0 0 0 5px rgba(210,163,106,.15); }
+.rodo-journal-day-label { padding-right:28px; display:flex; flex-direction:column; align-items:flex-end; gap:.1rem; text-align:right; }
 .rodo-journal-day-label strong { color:var(--journal-text); font-size:.68rem; font-weight:700; line-height:1.5; }
 .rodo-journal-day-label time { color:var(--journal-faint); font-size:.58rem; font-weight:600; }
 .rodo-journal-day-entries { min-width:0; display:grid; gap:.65rem; }
@@ -2987,9 +2987,9 @@ body.rodo-journal-modal-open { overflow:hidden; }
 
 @media (max-width:700px) {
   .rodo-journal-day { grid-template-columns:74px minmax(0,1fr); gap:.55rem; }
-  .rodo-journal-timeline::before { right:57px; }
-  .rodo-journal-day-dot { right:52px; }
-  .rodo-journal-day-label { padding-right:14px; }
+  .rodo-journal-timeline::before { right:8px; }
+  .rodo-journal-day-dot { right:3px; }
+  .rodo-journal-day-label { padding-right:19px; }
   .rodo-journal-day-label strong { font-size:.62rem; }
   .rodo-journal-day-label time { font-size:.54rem; }
   .rodo-journal-draft { align-items:flex-start; }
@@ -3268,3 +3268,88 @@ body.rodo-store-detail-open { overflow:hidden; }
 
 @media(max-width:900px){.rodo-premium-metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.rodo-premium-metric-grid{grid-template-columns:1fr}.rodo-premium-weekbars{gap:5px}.rodo-journal-folder-row{align-items:stretch;flex-direction:column}.rodo-journal-folder-select{width:100%}.rodo-journal-folder-manage{width:100%}.rodo-premium-inline-head{align-items:stretch;flex-direction:column}.rodo-premium-inline-head>button{width:100%}}
+
+/* ========================================================================== 
+   RODO JOURNAL FOLDERS — V1 UI
+   Premium organization layer: quiet, editorial, mobile-first.
+   ========================================================================== */
+.rodo-journal-folder-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.rodo-journal-folder-filter-native{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.rodo-journal-folder-chips{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding:2px 1px 1px;direction:rtl}
+.rodo-journal-folder-chips::-webkit-scrollbar{display:none}
+.rodo-journal-folder-chip{display:inline-flex;align-items:center;gap:7px;min-height:38px;flex:0 0 auto;padding:0 11px;border:1px solid rgba(255,255,255,.065);border-radius:12px;background:rgba(255,255,255,.018);color:rgba(239,243,247,.57);font:inherit;font-size:8.5px;font-weight:700;cursor:pointer;transition:border-color .18s ease,background .18s ease,color .18s ease,transform .18s ease}
+.rodo-journal-folder-chip:hover{border-color:rgba(255,255,255,.11);background:rgba(255,255,255,.03);transform:translateY(-1px)}
+.rodo-journal-folder-chip svg{width:13px;height:13px;flex:none;color:rgba(210,180,136,.78)}
+.rodo-journal-folder-chip small{min-width:18px;padding:2px 5px;border-radius:999px;background:rgba(255,255,255,.045);color:rgba(239,243,247,.4);font-size:7px;font-weight:800;text-align:center}
+.rodo-journal-folder-chip.is-active{border-color:rgba(210,163,106,.26);background:rgba(210,163,106,.075);color:#f0e7da;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.rodo-journal-folder-chip.is-active svg{color:#d8ab72}
+.rodo-journal-folder-chip.is-active small{background:rgba(210,163,106,.12);color:#d9bb91}
+.rodo-journal-folder-manage{min-height:36px}
+
+.rodo-journal-folder-dialog{position:fixed;inset:0;z-index:550;display:grid;place-items:center;padding:18px;opacity:1;transition:opacity .17s ease}
+.rodo-journal-folder-dialog.hidden{display:none}
+.rodo-journal-folder-dialog.is-closing{opacity:0}
+.rodo-journal-folder-dialog-backdrop{position:absolute;inset:0;background:rgba(3,5,8,.68);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.rodo-journal-folder-dialog-panel{position:relative;width:min(470px,100%);max-height:min(720px,calc(100dvh - 36px));overflow:auto;border:1px solid rgba(255,255,255,.09);border-radius:24px;background:linear-gradient(160deg,rgba(20,24,31,.985),rgba(10,12,16,.99));box-shadow:0 28px 90px rgba(0,0,0,.46);padding:20px}
+.rodo-journal-folder-dialog-head{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.055)}
+.rodo-journal-dialog-kicker{display:block;margin-bottom:5px;color:#8a9fca;font-size:7.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.rodo-journal-folder-dialog-head h3{margin:0;color:#f3f5f8;font-size:18px;line-height:1.45}
+.rodo-journal-folder-dialog-head p{margin:6px 0 0;color:rgba(231,236,241,.48);font-size:9px;line-height:1.8}
+.rodo-journal-folder-dialog-body{padding-top:16px}
+.rodo-journal-folder-form{display:grid;gap:15px}
+.rodo-journal-folder-form label{display:grid;gap:7px}
+.rodo-journal-folder-form label>span{color:rgba(229,235,241,.52);font-size:8.5px;font-weight:700}
+.rodo-journal-folder-form input{width:100%;min-height:48px;border:1px solid rgba(255,255,255,.08);border-radius:13px;background:rgba(255,255,255,.025);color:#f2f4f7;padding:0 13px;font:inherit;font-size:11px;outline:none;transition:border-color .18s ease,background .18s ease}
+.rodo-journal-folder-form input:focus{border-color:rgba(124,169,255,.42);background:rgba(124,169,255,.025);box-shadow:0 0 0 4px rgba(124,169,255,.05)}
+.rodo-journal-folder-dialog-actions{display:flex;gap:8px;justify-content:flex-start;align-items:center}
+.rodo-journal-dialog-primary,.rodo-journal-dialog-secondary,.rodo-journal-dialog-danger{min-height:42px;padding:0 14px;border-radius:12px;font:inherit;font-size:9px;font-weight:800;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.rodo-journal-dialog-primary{border:1px solid rgba(255,255,255,.02);background:#f0f2f4;color:#0c0f13;box-shadow:0 8px 24px rgba(0,0,0,.16)}
+.rodo-journal-dialog-secondary{border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);color:#c5cbd3}
+.rodo-journal-dialog-danger{border:1px solid rgba(235,98,109,.18);background:rgba(235,98,109,.075);color:#f0a1a8}
+.rodo-journal-dialog-primary:hover,.rodo-journal-dialog-secondary:hover,.rodo-journal-dialog-danger:hover{transform:translateY(-1px)}
+.rodo-journal-folder-manager{display:grid;gap:12px}
+.rodo-journal-folder-manager-list{display:grid;gap:7px}
+.rodo-journal-folder-manager-item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:11px 12px;border:1px solid rgba(255,255,255,.06);border-radius:15px;background:rgba(255,255,255,.018)}
+.rodo-journal-folder-manager-main{display:flex;align-items:center;gap:10px;min-width:0}
+.rodo-journal-folder-manager-icon{display:grid;place-items:center;width:36px;height:36px;flex:none;border-radius:11px;background:rgba(210,163,106,.075);border:1px solid rgba(210,163,106,.11);color:#d4ac78}
+.rodo-journal-folder-manager-icon svg{width:15px;height:15px}
+.rodo-journal-folder-manager-main>div:last-child{display:grid;gap:3px;min-width:0}
+.rodo-journal-folder-manager-main strong{color:#e8edf2;font-size:9.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rodo-journal-folder-manager-main span{color:rgba(226,233,239,.4);font-size:7.5px}
+.rodo-journal-folder-manager-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.rodo-journal-folder-manager-actions button{min-height:31px;padding:0 9px;border:1px solid rgba(255,255,255,.065);border-radius:9px;background:rgba(255,255,255,.018);color:rgba(236,241,245,.66);font:inherit;font-size:7.5px;font-weight:750;cursor:pointer}
+.rodo-journal-folder-manager-actions button:hover{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.035)}
+.rodo-journal-folder-manager-actions button.is-danger{color:#d9949b;border-color:rgba(224,100,111,.12)}
+.rodo-journal-folder-manager-empty,.rodo-journal-folder-confirm{display:grid;place-items:center;gap:8px;text-align:center;padding:22px 12px;border:1px dashed rgba(255,255,255,.08);border-radius:15px;background:rgba(255,255,255,.014)}
+.rodo-journal-folder-manager-empty{color:rgba(225,232,238,.43);font-size:8.5px;line-height:1.8}
+.rodo-journal-folder-manager-add{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;border:1px solid rgba(130,169,255,.13);border-radius:12px;background:rgba(130,169,255,.035);color:#afc5ea;font:inherit;font-size:8.5px;font-weight:800;cursor:pointer}
+.rodo-journal-folder-manager-add span{font-size:15px;line-height:1}
+.rodo-journal-folder-confirm-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:rgba(224,100,111,.07);border:1px solid rgba(224,100,111,.12);color:#df929a}
+.rodo-journal-folder-confirm-icon svg{width:21px;height:21px}
+.rodo-journal-folder-confirm strong{color:#edf1f5;font-size:13px}
+.rodo-journal-folder-confirm>span{color:rgba(229,235,241,.45);font-size:8px}
+.rodo-journal-folder-assignment{display:grid;gap:12px}
+.rodo-journal-folder-entry-preview{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border:1px solid rgba(255,255,255,.055);border-radius:13px;background:rgba(255,255,255,.018)}
+.rodo-journal-folder-entry-preview span{color:#edf1f5;font-size:9.5px;font-weight:750;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rodo-journal-folder-entry-preview small{color:rgba(223,230,236,.4);font-size:7.5px;white-space:nowrap}
+.rodo-journal-folder-choice-list{display:grid;gap:7px}
+.rodo-journal-folder-choice{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:11px 12px;border:1px solid rgba(255,255,255,.06);border-radius:14px;background:rgba(255,255,255,.018);color:#e6ebf0;font:inherit;text-align:right;cursor:pointer;transition:border-color .18s ease,background .18s ease,transform .18s ease}
+.rodo-journal-folder-choice:hover{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.03);transform:translateY(-1px)}
+.rodo-journal-folder-choice.is-current{border-color:rgba(210,163,106,.23);background:rgba(210,163,106,.06)}
+.rodo-journal-folder-choice>span{display:grid;grid-template-columns:auto 1fr;gap:4px 8px;align-items:center;min-width:0}
+.rodo-journal-folder-choice>span svg{grid-row:1 / span 2;width:16px;height:16px;color:#d6ae78}
+.rodo-journal-folder-choice b{font-size:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rodo-journal-folder-choice small{grid-column:2;color:rgba(227,233,238,.4);font-size:7.5px}
+.rodo-journal-folder-choice>svg{width:15px;height:15px;flex:none;color:#d7b27f}
+
+@media(max-width:560px){
+  .rodo-journal-folder-actions{width:100%;justify-content:stretch}
+  .rodo-journal-folder-actions .rodo-journal-folder-manage,.rodo-journal-folder-actions .rodo-journal-folder-add{flex:1}
+  .rodo-journal-folder-dialog{padding:0;align-items:end}
+  .rodo-journal-folder-dialog-panel{width:100%;max-height:92dvh;border-radius:25px 25px 0 0;padding:18px 16px 20px}
+  .rodo-journal-folder-manager-item{grid-template-columns:1fr}
+  .rodo-journal-folder-manager-actions{justify-content:stretch}
+  .rodo-journal-folder-manager-actions button{flex:1}
+  .rodo-journal-folder-dialog-actions>*{flex:1}
+}
+@media(prefers-reduced-motion:reduce){.rodo-journal-folder-dialog,.rodo-journal-folder-chip,.rodo-journal-folder-choice,.rodo-journal-dialog-primary,.rodo-journal-dialog-secondary,.rodo-journal-dialog-danger{transition:none!important}}
